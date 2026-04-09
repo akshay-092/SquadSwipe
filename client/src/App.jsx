@@ -1,5 +1,11 @@
+import Register from './components/auth/register';
+
 const App = () => {
-  return <div className="">hello</div>;
+  return (
+    <>
+      <Register />
+    </>
+  );
 };
 
 export default App;
