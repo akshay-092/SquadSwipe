@@ -15,7 +15,11 @@ const Register = () => {
         console.log('Google sign-in response:', data);
         if (data?.success && data?.user) {
           localStorage.setItem('user', JSON.stringify(data.user));
+          if (data.user.token) {
+            localStorage.setItem('token', data.user.token);
+          }
           toast.success('Signed in successfully');
+          window.location.assign('/dashboard');
         } else {
           toast.error('Sign-in failed. Please try again.');
         }
